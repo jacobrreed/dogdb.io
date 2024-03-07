@@ -1,7 +1,7 @@
 ![Build](https://github.com/jacobrreed/dogdb.io/actions/workflows/nextjs.yml/badge.svg)
 
 # DogDB.io
-![alt text](https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.svg?raw=true)
+![alt text](https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true)
 ## Description
 A movie database rating site targeted for dogs. Uses a scale system rated by the userbase 1-5 stars to determine dog friendliness. Uses MovieDB for the API calls and data fetching. Uses NextJS for the frontend.
 

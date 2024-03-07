@@ -34,10 +34,18 @@ export default function RootLayout({
         />
         <meta content="https://dogdb.io" property="og:url" />
         <meta
-          content="https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.svg?raw=true"
+          content="http://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true"
           property="og:image"
         />
-        <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+        <meta property="og:site_name" content="DogDB.io" />
+        <meta
+          property="og:image:secure_url"
+          content="https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Preview image for DogDB.io" />
+        <meta property="og:type" content="website" />
       </head>
       <body className={`${roboto.className} bg-background`}>
         <Providers>
