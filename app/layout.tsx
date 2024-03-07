@@ -26,6 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta content="DogDB.io" property="og:title" />
+        <meta
+          content="DogDB.io is a movie database website for dog friendliness rating."
+          property="og:description"
+        />
+        <meta content="https://dogdb.io" property="og:url" />
+        <meta
+          content="https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.svg?raw=true"
+          property="og:image"
+        />
+        <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+      </head>
       <body className={`${roboto.className} bg-background`}>
         <Providers>
           <NavBar />
