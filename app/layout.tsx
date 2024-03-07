@@ -32,13 +32,6 @@ export const metadata: Metadata = {
         alt: "Preview image for DogDB.io",
         protocol: "http",
       },
-      {
-        url: "https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true",
-        width: 1200,
-        height: 630,
-        alt: "Preview image for DogDB.io",
-        protocol: "https",
-      },
     ],
   },
 };
