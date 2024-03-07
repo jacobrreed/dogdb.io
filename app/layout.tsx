@@ -29,10 +29,10 @@ export default function RootLayout({
       <body className={`${roboto.className} bg-background`}>
         <Providers>
           <NavBar />
-          <div className="mx-auto container">{children}</div>
+          <div className="mx-auto">{children}</div>
           <div className="mt-4">
             <Divider />
-            <footer className="bg-gray-800 p-6 text-center text-white flex items-center justify-center">
+            <footer className="bg-gray-800 p-1 text-center text-white flex items-center justify-center">
               <p className="mr-2">Powered by</p>
               <Link href="https://www.themoviedb.org/">
                 <TmdbLogo />

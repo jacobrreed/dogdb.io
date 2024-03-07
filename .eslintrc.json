@@ -1,6 +1,10 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react-hooks/exhaustive-deps": "off"
-  }
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": ["off"]
+  },
+  "plugins": ["unused-imports"]
 }

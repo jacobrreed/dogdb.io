@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
@@ -23,7 +24,9 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.2",
+    "eslint-plugin-unused-imports": "^3.1.0",
     "postcss": "^8",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

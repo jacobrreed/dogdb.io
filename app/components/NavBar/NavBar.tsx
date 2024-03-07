@@ -10,7 +10,6 @@ import { Search } from "@/app/components/Search/Search";
 import Logo from "@/app/components/svgs/Logo/Logo";
 import Link from "next/link";
 import { useActivePath } from "@/app/components/NavBar/useActivePath";
-import TmdbLogo from "@/app/components/svgs/TmdbLogo/TmdbLogo";
 
 type NavigationItem = {
   href: string;
@@ -27,7 +26,7 @@ export const NavBar: React.FC = () => {
   return (
     <Navbar isBordered maxWidth="full" className="mb-5">
       <NavbarContent justify="start">
-        <Link href="/">
+        <Link href="/" aria-label="Home">
           <NavbarBrand>
             <Logo />
             <p
@@ -49,7 +48,7 @@ export const NavBar: React.FC = () => {
           </NavbarBrand>
         </Link>
         {navigation.map((item) => (
-          <Link key={item.name} href={item.href}>
+          <Link key={item.name} href={item.href} aria-label={item.name}>
             <NavbarItem
               className={
                 isActivePath(item.href)

@@ -1,6 +1,6 @@
 "use client";
 
-import { CircularProgress } from "@nextui-org/react";
+import { CircularProgress, Spinner } from "@nextui-org/react";
 import { MovieOverviewCard } from "@/app/components/MovieOverviewCard/MovieOverviewCard";
 import React from "react";
 import { useFetchDiscovery } from "@/app/api/fetchHooks";
@@ -26,11 +26,16 @@ export default function Home({ params }: { params: { page: string } }) {
         <div className="container m-auto grid lg:grid-cols-5 lg:gap-4 md:grid-cols-3 md:gap-2 sm:grid-cols-1 sm:gap-1">
           {data?.pages?.map((page) =>
             page.results.map((movie) => (
-              <MovieOverviewCard key={movie.id} movie={movie?.movieData} />
+              <MovieOverviewCard key={movie.id} movie={movie} />
             ))
           )}
         </div>
       )}
+      <footer className="flex items-center justify-center mt-5">
+        {isLoading || isFetching ? (
+          <Spinner label="Loading more result..." />
+        ) : null}
+      </footer>
     </main>
   );
 }
