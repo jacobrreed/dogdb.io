@@ -21,7 +21,7 @@ export const MovieOverviewCard: React.FC<Props> = ({ movieId }) => {
   const [error, setError] = React.useState<string>();
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/m?id=" + movieId);
+      const response = await fetch("/api/movie?id=" + movieId);
       if (response) {
         const data: TmdbMovieDetail = await response.json();
         setData(data);
@@ -38,22 +38,22 @@ export const MovieOverviewCard: React.FC<Props> = ({ movieId }) => {
   }, []);
 
   if (error) return <div>Failed to load TMDB movie data...</div>;
-  if (!data) return <CircularProgress aria-label="Loading..." />;
-
-  return (
-    <Card className="py-4 mx-auto" isPressable>
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large">{data?.title}</h4>
-        <small className="text-default-500">TODO Stars</small>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2">
-        <Image
-          alt="Card background"
-          className="object-cover rounded-xl"
-          src={getTmdbPosterPath(TmdbPosterSize.W342, data?.poster_path)}
-          width={270}
-        />
-      </CardBody>
-    </Card>
-  );
+  if (loading) return <CircularProgress aria-label="Loading..." />;
+  if (data)
+    return (
+      <Card className="py-4 mx-auto" isPressable>
+        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+          <h4 className="font-bold text-large">{data?.title}</h4>
+          <small className="text-default-500">TODO Stars</small>
+        </CardHeader>
+        <CardBody className="overflow-visible py-2">
+          <Image
+            alt="Card background"
+            className="object-cover rounded-xl"
+            src={getTmdbPosterPath(TmdbPosterSize.W342, data?.poster_path)}
+            width={270}
+          />
+        </CardBody>
+      </Card>
+    );
 };

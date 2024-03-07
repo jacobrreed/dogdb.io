@@ -8,9 +8,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const id = searchParams.get("id");
+  const page = searchParams.get("page");
+  console.error("GET", page, searchParams.get("id"));
   try {
-    const res = await fetch(getDiscoverEndpoint(id || "1"));
+    const res = await fetch(getDiscoverEndpoint(page || "1"));
     const data: ResponseWithResults<TmdbDiscoverResponse> = await res.json();
     return NextResponse.json<ResponseWithResults<TmdbDiscoverResponse>>(data);
   } catch (error: any) {
