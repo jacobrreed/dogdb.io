@@ -19,14 +19,14 @@ export default function Home({ params }: { params: { page: string } }) {
 
   return (
     <main
-      className="dark text-foreground bg-background"
+      className="dark text-foreground bg-background relative h-screen overflow-y-scroll"
       onScroll={handleScroll}
     >
       {data && data.pages && (
         <div className="container m-auto grid lg:grid-cols-5 lg:gap-4 md:grid-cols-3 md:gap-2 sm:grid-cols-1 sm:gap-1">
           {data?.pages?.map((page) =>
             page.results.map((movie) => (
-              <MovieOverviewCard key={movie.id} movieId={movie.id} />
+              <MovieOverviewCard key={movie.id} movie={movie?.movieData} />
             ))
           )}
         </div>

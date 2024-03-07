@@ -26,6 +26,15 @@ export interface ResponseWithResults<T> {
   total_pages: number;
   total_results: number;
 }
+
+export interface MergedDiscoverWithMovie extends TmdbDiscoverResponse {
+  movieData: TmdbMovieDetail;
+}
+export interface MergedDiscoverResponse
+  extends ResponseWithResults<TmdbDiscoverResponse> {
+  results: MergedDiscoverWithMovie[];
+}
+
 interface Genre {
   id: number;
   name: string;
