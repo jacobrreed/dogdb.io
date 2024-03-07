@@ -19,8 +19,7 @@ export const metadata: Metadata = {
     "DogDB.io is a movie database website for dog friendliness rating.",
   openGraph: {
     title: "DogDB.io",
-    description:
-      "DogDB.io is a movie database website for dog friendliness rating.",
+    description: "A movie database website for dog friendliness rating.",
     url: "https://dogdb.io",
     type: "website",
     siteName: "DogDB.io",
