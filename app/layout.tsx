@@ -17,6 +17,30 @@ export const metadata: Metadata = {
   title: "DogDB.io",
   description:
     "DogDB.io is a movie database website for dog friendliness rating.",
+  openGraph: {
+    title: "DogDB.io",
+    description:
+      "DogDB.io is a movie database website for dog friendliness rating.",
+    url: "https://dogdb.io",
+    type: "website",
+    siteName: "DogDB.io",
+    images: [
+      {
+        url: "http://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true",
+        width: 1200,
+        height: 630,
+        alt: "Preview image for DogDB.io",
+        protocol: "http",
+      },
+      {
+        url: "https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true",
+        width: 1200,
+        height: 630,
+        alt: "Preview image for DogDB.io",
+        protocol: "https",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -26,27 +50,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta content="DogDB.io" property="og:title" />
-        <meta
-          content="DogDB.io is a movie database website for dog friendliness rating."
-          property="og:description"
-        />
-        <meta content="https://dogdb.io" property="og:url" />
-        <meta
-          content="http://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true"
-          property="og:image"
-        />
-        <meta property="og:site_name" content="DogDB.io" />
-        <meta
-          property="og:image:secure_url"
-          content="https://github.com/jacobrreed/dogdb.io/blob/master/public/images/logo.png?raw=true"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Preview image for DogDB.io" />
-        <meta property="og:type" content="website" />
-      </head>
       <body className={`${roboto.className} bg-background`}>
         <Providers>
           <NavBar />
