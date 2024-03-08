@@ -6,7 +6,6 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
-import { Search } from "@/app/components/Search/Search";
 import Logo from "@/app/components/svgs/Logo/Logo";
 import Link from "next/link";
 import { useActivePath } from "@/app/components/NavBar/useActivePath";
@@ -60,12 +59,6 @@ export const NavBar: React.FC = () => {
             </NavbarItem>
           </Link>
         ))}
-      </NavbarContent>
-      <NavbarContent className="w-full">
-        <Search />
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem></NavbarItem>
       </NavbarContent>
     </Navbar>
   );

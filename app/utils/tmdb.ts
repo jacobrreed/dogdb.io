@@ -3,6 +3,7 @@ import { TmdbPosterSize } from "@/app/types/tmdb";
 export enum TmdbEndpoints {
   Discover = "https://api.themoviedb.org/3/discover/movie",
   MovieDetail = "https://api.themoviedb.org/3/movie",
+  MovieSearch = "https://api.themoviedb.org/3/search/movie",
 }
 
 export const getDiscoverEndpoint = (page: string = "1") => {
@@ -12,6 +13,11 @@ export const getDiscoverEndpoint = (page: string = "1") => {
 export const getMovieDetailEndpoint = (movieId: string) => {
   const endpoint = `${TmdbEndpoints.MovieDetail}/${movieId}`;
   return generateTmdbDestination(endpoint);
+};
+
+export const getMovieSearchEndpoint = (query: string) => {
+  const endpoint = TmdbEndpoints.MovieSearch;
+  return generateTmdbDestination(endpoint) + `&query=${query}`;
 };
 
 export const generateTmdbDestination = (endpoint: TmdbEndpoints | string) => {

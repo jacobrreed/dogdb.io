@@ -1,4 +1,4 @@
-export interface TmdbDiscoverResponse {
+export interface TmdbMovieOverviewDetail {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -27,11 +27,11 @@ export interface ResponseWithResults<T> {
   total_results: number;
 }
 
-export interface MergedDiscoverWithMovie extends TmdbDiscoverResponse {
+export interface MergedDiscoverWithMovie extends TmdbMovieOverviewDetail {
   movieData: TmdbMovieDetail;
 }
 export interface MergedDiscoverResponse
-  extends ResponseWithResults<TmdbDiscoverResponse> {
+  extends ResponseWithResults<TmdbMovieOverviewDetail> {
   results: MergedDiscoverWithMovie[];
 }
 

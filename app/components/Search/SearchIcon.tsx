@@ -7,7 +7,7 @@ interface Props {
   height?: number;
 }
 export const SearchIcon: React.FC<Props> = ({
-  size = 24,
+  size = 20,
   strokeWidth = 1.5,
   width,
   height,
@@ -16,6 +16,7 @@ export const SearchIcon: React.FC<Props> = ({
   <svg
     aria-hidden="true"
     fill="none"
+    className="mr-5"
     focusable="false"
     height={height || size}
     role="presentation"

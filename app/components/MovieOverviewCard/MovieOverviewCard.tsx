@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
-import { TmdbDiscoverResponse, TmdbPosterSize } from "@/app/types/tmdb";
+import { TmdbMovieOverviewDetail, TmdbPosterSize } from "@/app/types/tmdb";
 import { getTmdbPosterPath } from "@/app/utils/tmdb";
 
 interface Props {
-  movie: TmdbDiscoverResponse;
+  movie: TmdbMovieOverviewDetail;
 }
 
 export const MovieOverviewCard: React.FC<Props> = ({ movie }) => {

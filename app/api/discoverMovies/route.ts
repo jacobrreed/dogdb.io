@@ -1,4 +1,4 @@
-import { ResponseWithResults, TmdbDiscoverResponse } from "@/app/types/tmdb";
+import { ResponseWithResults, TmdbMovieOverviewDetail } from "@/app/types/tmdb";
 import { getDiscoverEndpoint } from "@/app/utils/tmdb";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -8,8 +8,10 @@ export async function GET(request: NextRequest) {
   console.error("GET", page, searchParams.get("id"));
   try {
     const res = await fetch(getDiscoverEndpoint(page || "1"));
-    const data: ResponseWithResults<TmdbDiscoverResponse> = await res.json();
-    return NextResponse.json<ResponseWithResults<TmdbDiscoverResponse>>(data);
+    const data: ResponseWithResults<TmdbMovieOverviewDetail> = await res.json();
+    return NextResponse.json<ResponseWithResults<TmdbMovieOverviewDetail>>(
+      data
+    );
   } catch (error: any) {
     console.log(error.message);
   }
